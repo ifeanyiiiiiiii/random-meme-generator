@@ -1,0 +1,245 @@
+body{
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the Header (h1) - Responsive */
+h1 {
+    font-family: sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    font-size: 2rem; /* Adjust base font size */
+}
+
+/* Styling the Buttons - Responsive */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button#favorite-button.added {
+    background-color: #28a745;
+}
+
+button#download-button {
+    background-color: #6c757d;
+}
+
+button#download-button:hover {
+    background-color: #5a6268;
+}
+
+button#delete-caption-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+button#delete-caption-button:hover {
+    background-color: #c82333;
+}
+
+button#display-favorites-button {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+button#display-favorites-button:hover {
+    background-color: #e0a800;
+}
+
+.meme-area{
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if the meme-area has a fixed height) */
+    margin-bottom: 1rem; /* Add some space below the meme area */
+    max-width: 100%; /* Ensure it doesn't exceed its container */
+    overflow: hidden; ;
+}
+
+#meme-image{
+    display: block; /* Remove any inline spacing */
+    max-width: 100%; /* Make the image responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.controls{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+    justify-content: centre;
+}
+
+.controls label,
+.controls input[type="text"],
+.controls select,
+.controls input[type="color"],
+.controls input[type="number"],
+.controls button {
+    margin-bottom: 10px; 
+}
+
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    .controls label,
+    .controls input[type="text"],
+    .controls select,
+    .controls input[type="color"],
+    .controls input[type="number"],
+    .controls button {
+        width: 100%; 
+        margin-bottom: 15px; 
+    }
+}
+
+.meme-text{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: -1px -1px 0 black;
+    font-size: 36px;
+    text-align: center;
+    width: 80%;
+    word-wrap: break-word;
+}
+
+.meme-text.top {
+    top: 10px; 
+}
+
+.meme-text.bottom {
+    bottom: 10px; 
+}
+#favorites-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#favorites-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.favorite-meme-image {
+    max-width: 200px; /* Adjust the maximum width as needed */
+    height: auto;       /* Maintain aspect ratio */
+    margin: 10px;      /* Add some spacing between images */
+    border: 1px solid #ddd; /* Optional: Add a border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05); /* Optional: Add a subtle shadow */
+    display: inline-block; /* Display images in a row and allow them to wrap */
+    vertical-align: top; /* Align images to the top */
+}
+
+#favorites-container p {
+    font-style: italic;
+    color: #777;
+}
+
+/* Responsive adjustments (you might want to adjust these for favorites too) */
+@media (max-width: 600px) {
+    .favorite-meme-image {
+        max-width: 150px; /* Smaller on smaller screens */
+        margin: 5px;
+    }
+    h1 {
+        font-size: 1.75rem; /* Smaller font size on smaller screens */
+        margin-bottom: 1rem;
+    }
+
+    button {
+        font-size: 0.9rem; /* Slightly smaller button text */
+        padding: 0.6rem 1rem; /* Adjust button padding */
+        margin-right: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+        align-items: center; /* Vertically align items */
+    }
+
+    .controls label,
+    .controls input,
+    .controls select,
+    .controls button {
+        margin-bottom: 0.5rem; /* Add some vertical spacing between control elements */
+    }
+
+    .controls input[type="text"],
+    .controls input[type="color"],
+    .controls input[type="number"],
+    .controls select {
+        flex-grow: 1; /* Allow input and select to take up more width */
+        margin-right: 0.5rem;
+    }
+
+    .controls button {
+        flex-basis: calc(50% - 0.3rem); /* Make buttons take up about half the width */
+    }
+
+    .controls button:last-child {
+        flex-basis: 100%; /* Make the last button take full width */
+    }
+
+
+}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+        flex-basis: 100%; /* Make buttons take full width on very small screens */
+        margin-right: 0;
+    }
+
+    .controls input[type="text"],
+    .controls input[type="color"],
+    .controls input[type="number"],
+    .controls select {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+}
