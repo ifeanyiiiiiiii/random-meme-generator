@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(displayFavoritesButton);
     const favoritesContainer = document.getElementById('favorites-container') as HTMLDivElement | null;
     console.log('displayFavoritesButton element:', displayFavoritesButton);
-    console.log('favoritesContainer on DOMContentLoaded:', favoritesContainer); // ADDED LOG
+    console.log('favoritesContainer on DOMContentLoaded:', favoritesContainer); 
     const fontSelector = document.getElementById('font-selector') as HTMLSelectElement | null;
     const colorPicker = document.getElementById('color-picker') as HTMLInputElement | null;
     const fontSizeInput = document.getElementById('font-size-input') as HTMLInputElement | null;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 favoriteArray.forEach(memeUrl => {
                     console.log('Processing URL:', memeUrl);
     
-                    const memeDiv = document.createElement('div'); // Create a container for the image and button
+                    const memeDiv = document.createElement('div'); 
                     memeDiv.classList.add('favorite-meme-item');
     
                     const img = document.createElement('img');
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('favoriteMemes', JSON.stringify(updatedFavorites));
         console.log(`${urlToRemove} removed from favorites.`);
     
-        // Re-render the favorite memes list
+       
         displayFavoriteMemes();
     }
 
@@ -198,6 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initial fetch
+   
     fetchRandomMeme();
 });
